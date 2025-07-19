@@ -1,21 +1,23 @@
-*{
-    padding: 0px;
-    margin: 0px;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
-.nav-sec{
-    height: 100vh;
-    
+
+.nav-sec {
+  height: 100vh;
 }
-.sec-video{
-    object-fit: cover;
-    position: fixed;
-    height: 100vh;
-    width: 100vw;
-    top: 0;
-    left: 0;
-    z-index: 1;
-   
+
+.sec-video {
+  object-fit: cover;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  z-index: 1;
 }
+
 .video-overlay {
   position: absolute;
   background-repeat: no-repeat;
@@ -25,38 +27,42 @@
   height: 100vh;
   object-fit: cover;
   z-index: 2;
-  pointer-events: none; /* Optional: allows clicks to pass through */
-}
-.navbar {
-    display: flex;
-  position: relative;
-  z-index: 4; /* ✅ higher than overlay */
-  padding: 1.5rem;
-  justify-content: space-around;
-  height: 5vh;
- 
-}
-.logo img{
-    height: 40px;
-    width: auto;
-    margin-bottom: 90px;
-}
-.hamburger
-{
-    display: none;
-}
-.menu-toggle{
-    display: none;
-}
-.nav-links {
-  display: flex;
-  justify-items: center;
-  list-style: none;
-  padding: 6px;
-  gap: 4rem;
-  
+  pointer-events: none;
 }
 
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 4;
+  padding: 1.2rem;
+  height: 10vh;
+}
+
+.logo img {
+  height: 40px;
+  width: auto;
+  margin-left: 11vw; /* ✅ pushes logo from left edge */
+}
+
+.hamburger {
+  display: none;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  gap: 6.5rem;
+    /* 👈 add space between list items */
+  
+}
 
 .nav-links a {
   text-decoration: none;
@@ -68,12 +74,79 @@
 .dropdown {
   position: relative;
 }
-.dropdown-menu{
-    display: none;
+
+.dropdown-menu {
+  display: none;
 }
-.download{
-   background-color: aqua;
-   position: relative;
-   height: 40px;
-   padding: 10px;
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+  position: absolute;
+  background-color: #111;
+  padding: 1rem;
+  top: 100%;
+  left: 0;
+  z-index: 10;
+}
+
+.download-btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  background-color: aqua;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
+}
+
+.download-btn a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1.2;
+}
+
+/* ✅ Responsive Styles */
+@media (max-width: 767px) {
+  .navbar {
+    flex-wrap: wrap;
+    padding: 1rem;
+  }
+
+  .hamburger {
+    display: block;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    z-index: 5;
+    margin-left: auto;
+    margin-right: 1rem;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: rgba(0, 0, 0, 0.85);
+    padding: 1rem;
+    width: 100%;
+    display: none;
+    margin-top: 1rem;
+  }
+
+  .menu-toggle:checked + .hamburger + .nav-links {
+    display: flex;
+  }
+
+  .download-btn {
+    width: 100%;
+    position: static;
+    display: none;
+    height: auto;
+    margin-top: 1rem;
+    justify-content: center;
+  }
+
 }
