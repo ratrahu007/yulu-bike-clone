@@ -1,0 +1,79 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+.nav-sec{
+    height: 100vh;
+    
+}
+.sec-video{
+    object-fit: cover;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    z-index: 1;
+   
+}
+.video-overlay {
+  position: absolute;
+  background-repeat: no-repeat;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: 2;
+  pointer-events: none; /* Optional: allows clicks to pass through */
+}
+.navbar {
+    display: flex;
+  position: relative;
+  z-index: 4; /* ✅ higher than overlay */
+  padding: 1.5rem;
+  justify-content: space-around;
+  height: 5vh;
+ 
+}
+.logo img{
+    height: 40px;
+    width: auto;
+    margin-bottom: 90px;
+}
+.hamburger
+{
+    display: none;
+}
+.menu-toggle{
+    display: none;
+}
+.nav-links {
+  display: flex;
+  justify-items: center;
+  list-style: none;
+  padding: 6px;
+  gap: 4rem;
+  
+}
+
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: 800;
+  font-size: 1rem;
+}
+
+.dropdown {
+  position: relative;
+}
+.dropdown-menu{
+    display: none;
+}
+.download{
+   background-color: aqua;
+   position: relative;
+   height: 40px;
+   padding: 10px;
+}
